@@ -1,0 +1,7 @@
+{
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.25",
+        "ifsnop/mysqldump-php": "^2.9",
+        "ext-mysqli": "*"
+    }
+}
