@@ -7,3 +7,5 @@ get('/cbt/close', 'controllers/cbt/close');
 get('/cbt/dashboard', 'views/cbt/dashboard');
 
 post('/cbt/verifystudentid','controllers/cbt/verifystudentid');
+
+get('/cbt/submit', 'controllers/cbt/submitfil');
