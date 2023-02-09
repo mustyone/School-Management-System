@@ -36,7 +36,7 @@ function dd(array|string ...$data):string
  * @return string
  * Dump data but do not exit
  */
-function d(array|string ...$data):string
+function d(array|string ...$data)
 {
     foreach ($data as $d) {
         echo "<pre>";
