@@ -45,6 +45,8 @@ function d(array|string ...$data)
     }
 }
 
+function randomFunc(){}
+
 /**
  * @param $path
  * @return string
