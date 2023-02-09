@@ -480,7 +480,9 @@ function searchTestScores($studentTestScore, $searchTestID)
     }
 }
 
-
+/**
+ * @return void
+ */
 function getStudentClasses()
 {
     global $dbc;
