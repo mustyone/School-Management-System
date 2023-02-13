@@ -11,6 +11,27 @@ $route = preg_filter('/[0-9]/', "", $request) ?? $request;
 //$path = strlen($path) === 0 ? $end : $path;
 
 switch ($route) {
+    case "/migration":
+        //fetch all the list of migrations
+        $migrations = scandir(APP_PATH."/migrations");
+
+        $migrationFiles = [];
+
+        foreach($migrations as $migration){
+            if(str_ends_with($migration, ".php")){
+                $formattedFiles = explode("_", $migration);
+                $formattedFiles = array_splice($formattedFiles,2, count($formattedFiles) - 5);
+
+                $formattedFileName = implode(" ",$formattedFiles);
+                $formattedFileName = ucfirst($formattedFileName);
+                
+                
+                $migrationFiles[$migration] = $formattedFileName; 
+                
+            }
+        }
+
+        break;
     case "/modules":
         $modules = [
             'cbt' => [
@@ -104,7 +125,7 @@ foreach($modulesConfig as $moduleConfig)
     $path = APP_PATH . "/moduleconfig/{$moduleConfig}";
 
     $moduleName = explode(".",$moduleConfig)[0];
-    if(in_array($moduleName, $_SESSION['allowedModules']) ){
+    if(in_array($moduleName, $_SESSION['allowedModules'] ?? [] ) ){
         include $path;
     }
     if($_SESSION['allowedModules'][0] === "*")
