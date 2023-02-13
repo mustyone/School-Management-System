@@ -9,7 +9,8 @@ switch ($route){
         $studentRecord = $_SESSION['studentRecord'];
         $class_id = $studentRecord['student_class_id'];
 
-        $query = "SELECT * FROM exams LEFT JOIN exam_subjects ON exams.exam_id = exam_subjects.exam_id WHERE session_id = $session_id 
+        $query = "SELECT * FROM exams LEFT JOIN exam_subjects ON exams.exam_id = exam_subjects.exam_id 
+                     LEFT JOIN subjects ON subjects.subject_id = exam_subjects.subject_id WHERE session_id = $session_id 
                       AND term_id = $term_id 
                       AND class_id = $class_id";
 
@@ -18,7 +19,7 @@ switch ($route){
 
         while($row = mysqli_fetch_assoc($result))
         {
-            // array_push();
+            array_push($exams,$row);
         }
 
         break;

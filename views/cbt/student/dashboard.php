@@ -89,37 +89,41 @@
                             </h3>
                             <div class="block-options">
                                 <button type="button" class="btn-block-option">
-                                    <i class="fa fa-user"></i>
+                                    <i class="fa fa-list"></i>
                                 </button>
                             </div>
                         </div>
                         <div class="block-content">
+                       
                             <table class="table table-bordered">
-                                <tr>
-                                    <td colspan="3">
-                                        <span><?= $studentRecord['student_id'] ?></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span>
-                                            <?= $studentRecord['student_first_name'] ?>
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span><?= $studentRecord['student_middle_name'] ?></span>
-                                    </td>
-                                    <td>
-                                        <span><?= $studentRecord['student_last_name'] ?></span>
-                                    </td>
+                              
+                               <tr>
+                                <thead>
+                                    <td>#</td>
+                                    <td>Subject Code</td>
+                                    <td>Subject</td>
+                                </thead>
+                               </tr>
+                               <?php
+                                $count = 0;
+                            foreach($exams as $exam):
 
-                                </tr>
-                                <tr>
-                                    <td colspan="3">
-                                        <span><?= $studentRecord['student_class_id'] ?></span>
-                                    </td>
-                                </tr>
 
+                        ?>
+                               <tr>
+                                <tbody>
+                                    <tr>
+                                    <td><?=$count++?></td>
+                                        <td><?=$exam['subject_code']?></td>
+                                        <td><?=$exam['subject_name']?></td>
+                                    </tr>
+                                    </tbody>
+                               </tr>
+<?php
+                    
+                     endforeach;
+                          
+?>
                             </table>
                         </div>
                     </div>
