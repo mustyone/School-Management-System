@@ -1,7 +1,0 @@
-ALTER TABLE `exams` ADD `total` INT NOT NULL AFTER `updated_at`;
-ALTER TABLE `exam_subjects` ADD `numberQuestions` INT NOT NULL AFTER `subject_id`;
-ALTER TABLE `exam_subjects` CHANGE `question_bank_id` `question_bank_id` JSON NULL DEFAULT NULL;
-ALTER TABLE `exam_subjects` ADD `total` INT NOT NULL AFTER `created_at`;
-CREATE TABLE `school_management_system`.`question_bank` ( `id` INT NOT NULL AUTO_INCREMENT , `question_title` TEXT NOT NULL , `options` JSON NOT NULL , `correct_option` VARCHAR(30) NOT NULL , `subject_id` INT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
-CREATE TABLE `school_management_system`.`exam_result` ( `id` INT NOT NULL AUTO_INCREMENT , `student_id` INT NOT NULL , `exam_id` INT NOT NULL , `score` INT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
-CREATE TABLE `school_management_system`.`exam_review` ( `id` INT NOT NULL AUTO_INCREMENT , `exam_id` INT NOT NULL , `student_id` INT NOT NULL , `question_id` INT NOT NULL , `choose_option` INT NOT NULL , `status` INT NOT NULL , `mark` DECIMAL NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
