@@ -113,14 +113,15 @@
                                <tr>
                                 <tbody>
                                     <tr>
-                                    <td><?=$count?></td>
+                                    <td><?=$count++?></td>
                                         <td><?=$exam['subject_code']?></td>
                                         <td><?=$exam['subject_name']?></td>
                                     </tr>
                                     </tbody>
                                </tr>
 <?php
-                     $count++;   endforeach;
+                    
+                     endforeach;
                           
 ?>
                             </table>
