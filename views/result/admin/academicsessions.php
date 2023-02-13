@@ -3,7 +3,6 @@
 <?php include(APP_PATH . "/config/rolechecker.php"); ?>
 <?php include(APP_PATH . "/config/pageconfig.php"); ?>
 
-
 <!doctype html>
 <html lang="en">
 
