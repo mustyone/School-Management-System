@@ -91,12 +91,11 @@ get('/result/teacher/changepassword', '/views/result/teacher/changepassword');
 
 
 //##################################  POST REQUESTS #########################################################
-
 post('/result/teacher/saveresult','controllers/result/saveresult');
 post('/result/teacher/updateresult','controllers/result/updateresult');
 post('/result/teacher/changepassword', 'controllers/result/changepassword_teacher');
 
-
+post('/result/admin/savesettings', 'controllers/result/savesettings');
 post('/result/admin/changepassword', 'controllers/result/changepassword');
 
 post('/result/admin/backupdatabase','controllers/result/backupdatabase');

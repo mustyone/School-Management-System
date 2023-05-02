@@ -73,6 +73,7 @@ if(!array_key_exists($userRole,$roles)){
 //remove the password
 unset($userRecord['staff_login_password']);
 
+$_SESSION['fullname'] = $userRecord['fullname'];
 $_SESSION['userIsTeacher'] = false;
 $_SESSION['user_id'] = $userRecord['staff_id'];
 $_SESSION['loggedIn'] = true;

@@ -52,13 +52,15 @@
 
       <!-- Page Content -->
       <div class="content">
-        <?php include "message.php"; ?>
+
+        <?php include APP_PATH . "/views/includes/message.php"; ?>
+
         <div class="block block-rounded">
           <div class="block-header block-header-default">
             <h3 class="block-title">Update School Information</h3>
           </div>
           <div class="block-content block-content-full">
-            <form action="/controllers/savesettings.php" method="POST">
+            <form action="/result/admin/savesettings" method="POST">
               <div class="row push">
                 <div class="col-lg-12">
                   <?php foreach($schoolInfo as $settingName => $settingValue): ?>

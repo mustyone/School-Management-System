@@ -1,7 +1,7 @@
 <?php
-include('../config/session.php');
-include('../config/db.php');
 
+include(APP_PATH . '/config/session.php');
+include(APP_PATH . '/config/db.php');
 foreach($_POST as $setting_name => $setting_value){
     if($setting_name == 'save') continue;
 
