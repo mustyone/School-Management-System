@@ -20,4 +20,3 @@ This is a paragraph
 
 ---
 `<?php echo "Hello world" ?>`
-musa
