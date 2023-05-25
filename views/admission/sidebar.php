@@ -68,12 +68,12 @@
                     </a>
                     <ul class="nav-main-submenu">
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="/resul/admi/newstuden">
+                            <a class="nav-main-link" href="/admission/newbatch">
                                 <span class="nav-main-link-name">New Batch</span>
                             </a>
                         </li>
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="/resul/admi/newbulkstuden">
+                            <a class="nav-main-link" href="/admission/viewbatches">
                                 <span class="nav-main-link-name">View Batches</span>
                             </a>
                         </li>
@@ -88,12 +88,12 @@
                     </a>
                     <ul class="nav-main-submenu">
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="/result/admin/newteacher">
+                            <a class="nav-main-link" href="/admission/filename">
                                 <span class="nav-main-link-name">View Application</span>
                             </a>
                         </li>
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="/result/admin/teachers">
+                            <a class="nav-main-link" href="/admission/filename">
                                 <span class="nav-main-link-name">New Application</span>
                             </a>
                         </li>
@@ -107,12 +107,12 @@
                     </a>
                     <ul class="nav-main-submenu">
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="/result/admin/newteacher">
+                            <a class="nav-main-link" href="/admission/filename">
                                 <span class="nav-main-link-name">Single</span>
                             </a>
                         </li>
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="/result/admin/teachers">
+                            <a class="nav-main-link" href="/admission/filename">
                                 <span class="nav-main-link-name">Bulk</span>
                             </a>
                         </li>
@@ -126,12 +126,12 @@
                     </a>
                     <ul class="nav-main-submenu">
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="/result/admin/newteacher">
+                            <a class="nav-main-link" href="/admission/filename">
                                 <span class="nav-main-link-name">Generate PINs</span>
                             </a>
                         </li>
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="/result/admin/teachers">
+                            <a class="nav-main-link" href="/admission/filename">
                                 <span class="nav-main-link-name">PIN Logs</span>
                             </a>
                         </li>
@@ -146,17 +146,17 @@
                     </a>
                     <ul class="nav-main-submenu">
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="/result/admin/newbackup">
+                            <a class="nav-main-link" href="/admission/filename">
                                 <span class="nav-main-link-name">New backup</span>
                             </a>
                         </li>
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="/result/admin/backuprecords">
+                            <a class="nav-main-link" href="/radmission/filename">
                                 <span class="nav-main-link-name">Backup records</span>
                             </a>
                         </li>
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="/result/admin/restorebackup">
+                            <a class="nav-main-link" href="/admission/filename">
                                 <span class="nav-main-link-name">Restore Backup</span>
                             </a>
                         </li>
