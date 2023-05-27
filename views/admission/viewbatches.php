@@ -55,42 +55,40 @@
                         <h3 class="block-title">View Batches</h3>
                     </div>
                     <div class="block-content block-content-full">
-                        <form action="/result/admin/newstudent" method="POST">
-                            <div class="row push">
-                                <div class="col-lg-12">
-                                    <div class="mb-4">
-                                        <div class="row">
-                                            <div class="col-md">
-                                                <label class="form-label">
-                                                    Batch <span class="text-danger">*</span>
-                                                </label>
-
-                                                <input required type="text" class="form-control" name="student_admission_number">
-                                            </div>
-                                            <div class="col-md">
-                                                <label class="form-label">
-                                                    Batch code 
-                                                </label>
-
-                                                <select name="house_id" class="form-control">
-                                                    <option value=""></option>        
-                                                </select>
-                                            </div>
-
-                                            <div class="col-md">
-                                                <label class="form-label">
-                                                    Batch Name <span class="text-danger">*</span>
-                                                </label>
-                                                <input required type="text" class="form-control" name="first_name" placeholder="John">
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                    <button type="submit" class="btn btn-primary">View</button>
-                                </div>
-                        </form>
+                      <table class="table table-responsive ">
+                            <thead>
+                                <tr>
+                                    <td>s/n</td>
+                                    <td>BATCH NAME</td>
+                                    <td>BATCH CODE</td>
+                                    <td>SESSION</td>
+                                    <td>TERM</td>
+                                    <td>STATUS</td>
+                                    <td>START DATE</td>
+                                    <td>END DATE</td>
+                                    <td>REQUED PIN</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $sn =1;?>
+                                <?php foreach($batches as $batch):?>
+                                    <tr>
+                                        <th><?= $sn++?></th>
+                                        <th><?= $batch['batch_code']?></th>
+                                        <th><?= $batch['batch_name']?></th>
+                                        <th><?= $batch['session_name']?></th>
+                                        <th><?= getTermName($batch['term_id']) ;?></th>
+                                        <th><?= $batch['status']?></th>
+                                        <th><?= $batch['start_date']?></th>
+                                        <th><?= $batch['end_date']?></th>
+                                        <th><?= $batch['require_pin']?></th>
+                                        <th><a href="/admission/updatebatch/<?= $batch['batch_id']?>"><button class="btn btn-info">Edit</button></a></th>
+                                    </tr>
+                                    
+                                <?php endforeach;?>
+                                
+                            </tbody>
+                      </table>
                     </div>
                 </div>
             </div>

@@ -38,7 +38,7 @@
                                     <a class="link-fx" href="/admission/dashboard">Dashboard</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    New Batch
+                                    Update Batch
                                 </li>
                             </ol>
                         </nav>
@@ -52,10 +52,11 @@
                 <?php include APP_PATH . "/views/includes/message.php"; ?>
                 <div class="block block-rounded">
                     <div class="block-header block-header-default">
-                        <h3 class="block-title">New Batch</h3>
+                        <h3 class="block-title">Update Batch</h3>
                     </div>
                     <div class="block-content block-content-full">
-                        <form action="/admission/newbatch" method="POST">
+                        <form action="/admission/updatebatch" method="POST">
+                            <input type="hidden" value="<?php echo $data['batch_id'];?>" name="batch_id">
                             <div class="row push">
                                 <div class="col-lg-12">
                                     <div class="mb-4">
@@ -64,14 +65,14 @@
                                                 <label class="form-label">
                                                     Batch Name <span class="text-danger">*</span>
                                                 </label>
-                                                <input required type="text" class="form-control" name="batch_name" placeholder="Batch Name">
+                                                <input required type="text" class="form-control" name="batch_name" value="<?= $data['batch_name']?>">
                                             </div>
 
                                             <div class="col-md">
                                                 <label class="form-label">
                                                     Batch Code <span class="text-danger">*</span>
                                                 </label>
-                                                <input required type="text" class="form-control" name="batch_code" placeholder="Code">
+                                                <input required type="text" class="form-control" name="batch_code" value="<?= $data['batch_code']?>">
                                             </div>
 
                                         </div>
@@ -85,9 +86,10 @@
                                                     Session <span class="text-danger">*</span>
                                                 </label>
                                                 <select required name="session_id" class="form-control">
-                                                    <option value="">session</option>
-                                                    <?php foreach ($sessions as $session) : ?>
-                                                        <option value="<?= $session['session_id'] ?>"><?= $session['session_name'] ?></option>
+                                                    <?php foreach ($records as $session) : ?>
+                                                        <option <?php if($data['session_id'] == $session['session_id']){ echo "selected";} ?> value="<?= $session['session_id']?>">
+                                                            <?= $session['session_name']?>
+                                                        </option>
                                                     <?php endforeach; ?>
                                                 </select>
                                             </div>
@@ -97,9 +99,9 @@
                                                     Term <span class="text-danger">*</span>
                                                 </label>
                                                 <select required name="term_id" class="form-control">
-                                                    <option value="1">first</option>
-                                                    <option value="2">second</option>
-                                                    <option value="3">third</option>
+                                                    <option <?php if($data['term_id'] == "1" ) echo "selected"?> value="1">First</option>
+                                                    <option <?php if($data['term_id'] == "2" ) echo "selected"?> value="2">Second</option>
+                                                    <option <?php if($data['term_id'] == "3" ) echo "selected"?> value="3">Third</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -112,19 +114,20 @@
                                                     Status <span class="text-danger">*</span>
                                                 </label>
                                                 <select required name="status" class="form-control">
-                                                    <option value="open">open</option>
-                                                    <option value="closed">closed</option>
+                                                    
+                                                    <option <?php if($data['status'] == 'open') echo "selected"?> value="open">open</option>
+                                                    <option <?php if($data['status'] == 'closed') echo "selected"?> value="closed">closed</option>
                                                 </select>
                                             </div>
 
                                             <div class="col-md">
                                                 <label class="form-label">Start Date <span class="text-danger">*</span></label>
-                                                <input required type="date" class="form-control" name="start_date">
+                                                <input required value="<?= $data['start_date']?>" class="form-control" name="start_date">
                                             </div>
 
                                             <div class="col-md">
                                                 <label class="form-label">End Date <span class="text-danger">*</span></label>
-                                                <input required type="date" class="form-control" name="end_date">
+                                                <input required value="<?= $data['end_date']?>" class="form-control" name="end_date">
                                             </div>
 
                                             <div class="col-md">
@@ -132,8 +135,8 @@
                                                     Pin <span class="text-danger">*</span>
                                                 </label>
                                                 <select required name="require_pin" class="form-control">
-                                                    <option value="yes">Yes</option>
-                                                    <option value="no">No</option>
+                                                    <option <?php if($data['require_pin'] == "yes") echo "selected"?> value="yes">yes</option>
+                                                    <option <?php if($data['require_pin'] == "no") echo "selected"?> value="no">No</option>
                                                 </select>
                                             </div>
                                         </div>
