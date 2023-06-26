@@ -7,3 +7,4 @@ vendor/*
 
 config/db.php
 
+assets/uploads/modules/*
