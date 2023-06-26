@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+// error_reporting(0);
 require 'init.php';
 
 require_once __DIR__.'/router.php';

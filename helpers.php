@@ -699,3 +699,20 @@ function uploadedResult($subject_id, $session_id, $term_id){
     return false;
 }
 
+function old($key){
+    if(isset($_SESSION['old'][$key])){
+        return $_SESSION['old'][$key];
+    }
+
+    return null;
+}
+
+function getSetting(string $key){
+    global $dbc;
+    $query = "SELECT * FROM settings WHERE setting_name = '$key'";
+
+    $result = mysqli_query($dbc, $query);
+
+    $record =mysqli_fetch_assoc($result);
+    return $record['setting_value'];
+}
