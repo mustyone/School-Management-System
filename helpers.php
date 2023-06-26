@@ -406,6 +406,8 @@ function getSectionSubjects($section_id = null):array
 function getSections(): array
 {
     global $dbc;
+
+
     $query = "SELECT * FROM sections";
 
     $result = mysqli_query($dbc, $query);

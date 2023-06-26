@@ -24,6 +24,7 @@
 <body>
 <div id="page-container">
     <div class="container-fluid p-0 m-0">
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#"><?= setting('school_name'); ?></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,6 +53,7 @@
         <div class="container mt-3">
             <?php include APP_PATH. "/views/includes/message.php"; ?>
             <div class="row justify-content-center push">
+
                 <?php $modulesLoop = $_SESSION['allowedModules'][0] === "*" ? $registeredModules : $_SESSION['allowedModules']; ?>
                 <?php foreach ($modulesLoop as $module): ?>
                     <?php if (!isset($modules[$module])) continue; ?>

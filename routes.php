@@ -11,4 +11,6 @@ get('/migration', 'views/migration/migrate');
 
 post('/runmigration', 'controllers/migration/run');
 
+post('/login' , 'controllers/auth/login');
+
 any('/404','views/404.php');

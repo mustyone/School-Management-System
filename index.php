@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 // error_reporting(0);
+=======
+//error_reporting(0);
+>>>>>>> a047eee (updated migration)
 require 'init.php';
 
 require_once __DIR__.'/router.php';

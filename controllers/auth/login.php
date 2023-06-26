@@ -1,7 +1,7 @@
 <?php
-include('../../config/session.php');
-include('../../config/db.php');
-include('../../config/role.php');
+include(APP_PATH . '/config/session.php');
+include(APP_PATH.'/config/db.php');
+include(APP_PATH.'/config/role.php');
 //include("functions.php");
 // $name = $_GET['teacher'];
 
