@@ -38,7 +38,7 @@
                                     <a class="link-fx" href="/admission/dashboard">Dashboard</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    View Batches
+                                    confirmation
                                 </li>
                             </ol>
                         </nav>
@@ -52,45 +52,30 @@
                 <?php include APP_PATH . "/views/includes/message.php"; ?>
                 <div class="block block-rounded">
                     <div class="block-header block-header-default">
-                        <h3 class="block-title">View Batches</h3>
+                        <h3 class="block-title">confirmation</h3>
                     </div>
                     <div class="block-content block-content-full">
-                      <table class="table table-responsive ">
-                            <thead>
-                                <tr>
-                                    <td>S/N</td>
-                                    <td>BATCH NAME</td>
-                                    <td>BATCH CODE</td>
-                                    <td>SESSION</td>
-                                    <td>TERM</td>
-                                    <td>STATUS</td>
-                                    <td>START DATE</td>
-                                    <td>END DATE</td>
-                                    <td>REQUED PIN</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php $sn =1;?>
-                                <?php foreach($batches as $batch):?>
-                                    <tr>
-                                        <th><?= $sn++?></th>
-                                        <th><?= $batch['batch_code']?></th>
-                                        <th><?= $batch['batch_name']?></th>
-                                        <th><?= $batch['session_name']?></th>
-                                        <th><?= getTermName($batch['term_id']) ;?></th>
-                                        <th><?= $batch['status']?></th>
-                                        <th><?= $batch['start_date']?></th>
-                                        <th><?= $batch['end_date']?></th>
-                                        <th><?= $batch['require_pin']?></th>
-                                        <th><a href="/admission/updatebatch/<?= $batch['batch_id']?>"><button class="btn btn-info">Edit</button></a></th>
-                                        <th><a href="/admission/updatebatchstatus/<?= $batch['batch_id']?>"><button class="btn btn-info">Open</button></a></th>
+                            <form action="/admission/confermstudent" method="POST">
+                                <div class="row push">
+                                    <div class="col-lg-12">
+                                        <div class="mb-4">
+                                            <div class="row">
+                                                <div class="col-md-9">
+                                                    <label class="form-label">
+                                                        Application Number
+                                                        <span class="text-danger">*</span>
+                                                    </label>
+                                                       <input type="text" class="form-control" placeholder="Application Number" name="app_number">
+                                                </div>
+                                                <div style="margin-top:30px;" class="col-md-3">
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
 
-                                    </tr>
-                                    
-                                <?php endforeach;?>
-                                
-                            </tbody>
-                      </table>
+                                                </div>
+                                            </div>                                    
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                     </div>
                 </div>
             </div>
@@ -98,6 +83,8 @@
         </main>
 
         <!-- END Main Container -->
+
+        
 
         <?php include "footer.php"; ?>
     </div>

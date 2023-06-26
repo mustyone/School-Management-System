@@ -4,17 +4,19 @@ include(APP_PATH.'/config/db.php');
 
 extract($_POST);
 
+$creat_batch_code = str_replace(" ", "-", "$batch_name");
+$batch_code = $creat_batch_code.'-'.$session_id.'-'.$term_id; // 2023-2024-Batch-1-1
 $query = "INSERT INTO admission_batches (batch_name,batch_code,session_id,term_id,status,start_date,end_date,require_pin) 
 VALUES('$batch_name','$batch_code','$session_id','$term_id','$status','$start_date','$end_date','$require_pin')";
-$result = mysqli_query($dbc,$query);
 
-$affected_rows = mysqli_affected_rows($dbc);
-if($affected_rows ==1){
+try{
+    $result = mysqli_query($dbc,$query);
     $_SESSION['message'] = "Record Saved Successful";
     header("location:/admission/newbatch");
-}
-else{
-    $_SESSION['error'] ="Sorry pls check the input";
+  }
+catch(\Exception $e){
+    $_SESSION['error'] ="Sorry This Batch Exist";
     header("location:/admission/newbatch");
 }
+  
 

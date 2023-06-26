@@ -66,14 +66,6 @@
                                                 </label>
                                                 <input required type="text" class="form-control" name="batch_name" placeholder="Batch Name">
                                             </div>
-
-                                            <div class="col-md">
-                                                <label class="form-label">
-                                                    Batch Code <span class="text-danger">*</span>
-                                                </label>
-                                                <input required type="text" class="form-control" name="batch_code" placeholder="Code">
-                                            </div>
-
                                         </div>
 
                                     </div>

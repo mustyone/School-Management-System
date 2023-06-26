@@ -38,7 +38,7 @@
                                     <a class="link-fx" href="/admission/dashboard">Dashboard</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    View Batches
+                                    View Applications
                                 </li>
                             </ol>
                         </nav>
@@ -52,48 +52,71 @@
                 <?php include APP_PATH . "/views/includes/message.php"; ?>
                 <div class="block block-rounded">
                     <div class="block-header block-header-default">
-                        <h3 class="block-title">View Batches</h3>
+                        <h3 class="block-title">view Applications</h3>
+                    </div>
+                    <div class="block-content block-content-full">
+                        <form action="/admission/viewapplication" method="POST">
+                            <div class="row push">
+                                <div class="col-lg-12">
+                                    <div class="mb-4">
+                                        <div class="row">
+                                            <div class="col-md">
+                                                <label class="form-label">
+                                                    Batch Name <span class="text-danger">*</span>
+                                                </label>
+                                                <select  class="form-control" name="batch_id">
+                                                    <?php foreach($batches as $batch):?>
+                                                        <option required value="<?= $batch['batch_id'];?>"><?= $batch['batch_name'];?></option>
+                                                    <?php endforeach;?>
+                                                </select>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-primary">Proceed</button>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="block block-rounded">
+                <?php if(isset($_SESSION['records'])):?>
+                    <div class="block-header block-header-default">
+                        <h3 class="block-title">Applications</h3>
                     </div>
                     <div class="block-content block-content-full">
                       <table class="table table-responsive ">
                             <thead>
                                 <tr>
                                     <td>S/N</td>
-                                    <td>BATCH NAME</td>
-                                    <td>BATCH CODE</td>
-                                    <td>SESSION</td>
-                                    <td>TERM</td>
-                                    <td>STATUS</td>
-                                    <td>START DATE</td>
-                                    <td>END DATE</td>
-                                    <td>REQUED PIN</td>
+                                    <td>APP NO</td>
+                                    <td>FIRST</td>
+                                    <td>MIDDLE</td>
+                                    <td>LAST</td>
+                                    <td>CLASS</td>       
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php $sn =1;?>
-                                <?php foreach($batches as $batch):?>
+                                <?php foreach($_SESSION['records'] as $records):?>
                                     <tr>
                                         <th><?= $sn++?></th>
-                                        <th><?= $batch['batch_code']?></th>
-                                        <th><?= $batch['batch_name']?></th>
-                                        <th><?= $batch['session_name']?></th>
-                                        <th><?= getTermName($batch['term_id']) ;?></th>
-                                        <th><?= $batch['status']?></th>
-                                        <th><?= $batch['start_date']?></th>
-                                        <th><?= $batch['end_date']?></th>
-                                        <th><?= $batch['require_pin']?></th>
-                                        <th><a href="/admission/updatebatch/<?= $batch['batch_id']?>"><button class="btn btn-info">Edit</button></a></th>
-                                        <th><a href="/admission/updatebatchstatus/<?= $batch['batch_id']?>"><button class="btn btn-info">Open</button></a></th>
-
-                                    </tr>
-                                    
+                                        <th><?= $records['app_number']?></th>
+                                        <th><?= $records['first_name']?></th>
+                                        <th><?= $records['middle_name']?></th>
+                                        <th><?= $records['last_name']?></th>
+                                        <th><?= $records['class_alternative_name'] ?></th>
+                                        <th><a href="/admission/viewapplicationrecord/<?= $records['app_id']; ?>">view more</a></th>
+                                    </tr>                                    
                                 <?php endforeach;?>
+                                <?php unset($_SESSION['records']); ?>
                                 
                             </tbody>
                       </table>
                     </div>
+                <?php endif;?>
                 </div>
-            </div>
             <!-- END Page Content -->
         </main>
 

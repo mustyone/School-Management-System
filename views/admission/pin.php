@@ -38,7 +38,7 @@
                                     <a class="link-fx" href="/admission/dashboard">Dashboard</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    View Batches
+                                    PIN
                                 </li>
                             </ol>
                         </nav>
@@ -52,45 +52,24 @@
                 <?php include APP_PATH . "/views/includes/message.php"; ?>
                 <div class="block block-rounded">
                     <div class="block-header block-header-default">
-                        <h3 class="block-title">View Batches</h3>
+                        <h3 class="block-title">PIN</h3>
                     </div>
                     <div class="block-content block-content-full">
-                      <table class="table table-responsive ">
-                            <thead>
-                                <tr>
-                                    <td>S/N</td>
-                                    <td>BATCH NAME</td>
-                                    <td>BATCH CODE</td>
-                                    <td>SESSION</td>
-                                    <td>TERM</td>
-                                    <td>STATUS</td>
-                                    <td>START DATE</td>
-                                    <td>END DATE</td>
-                                    <td>REQUED PIN</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php $sn =1;?>
-                                <?php foreach($batches as $batch):?>
-                                    <tr>
-                                        <th><?= $sn++?></th>
-                                        <th><?= $batch['batch_code']?></th>
-                                        <th><?= $batch['batch_name']?></th>
-                                        <th><?= $batch['session_name']?></th>
-                                        <th><?= getTermName($batch['term_id']) ;?></th>
-                                        <th><?= $batch['status']?></th>
-                                        <th><?= $batch['start_date']?></th>
-                                        <th><?= $batch['end_date']?></th>
-                                        <th><?= $batch['require_pin']?></th>
-                                        <th><a href="/admission/updatebatch/<?= $batch['batch_id']?>"><button class="btn btn-info">Edit</button></a></th>
-                                        <th><a href="/admission/updatebatchstatus/<?= $batch['batch_id']?>"><button class="btn btn-info">Open</button></a></th>
+                        <form action="/admission/checkpin" method="POST">
+                            <div class="row push">
+                                    <div class="mb-4">
+                                        <div class="col-md">
+                                            <label class="form-label">
+                                                Pin <span class="text-danger">*</span>
+                                            </label>
+                                            <input required type="text" class="form-control" placeholder="Enter Pin" name="pin">
+                                        </div>
+                                    </div>
+                                </div>
 
-                                    </tr>
-                                    
-                                <?php endforeach;?>
-                                
-                            </tbody>
-                      </table>
+                                <button type="submit" class="btn btn-primary" name="save">Save</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -88,13 +88,14 @@
                     </a>
                     <ul class="nav-main-submenu">
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="/admission/filename">
-                                <span class="nav-main-link-name">View Application</span>
+                            <a class="nav-main-link" href="/admission/newapplication">
+                                <span class="nav-main-link-name">New Application</span>
                             </a>
                         </li>
+
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="/admission/filename">
-                                <span class="nav-main-link-name">New Application</span>
+                            <a class="nav-main-link" href="/admission/viewapplications">
+                                <span class="nav-main-link-name">View Application</span>
                             </a>
                         </li>
                     </ul>
@@ -107,13 +108,23 @@
                     </a>
                     <ul class="nav-main-submenu">
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="/admission/filename">
+                            <a class="nav-main-link" href="/admission/singleadmission">
                                 <span class="nav-main-link-name">Single</span>
                             </a>
                         </li>
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="/admission/filename">
+                            <a class="nav-main-link" href="/admission/bulkadmission">
                                 <span class="nav-main-link-name">Bulk</span>
+                            </a>
+                        </li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="/admission/sigleadmissionletter">
+                                <span class="nav-main-link-name">Single Application Letter</span>
+                            </a>
+                        </li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="/admission/bulkadmissionletter">
+                                <span class="nav-main-link-name">Bulk Application Letter</span>
                             </a>
                         </li>
                     </ul>
@@ -126,13 +137,27 @@
                     </a>
                     <ul class="nav-main-submenu">
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="/admission/filename">
+                            <a class="nav-main-link" href="/admission/generatepin">
                                 <span class="nav-main-link-name">Generate PINs</span>
                             </a>
                         </li>
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="/admission/filename">
+                            <a class="nav-main-link" href="/admission/pinlogs">
                                 <span class="nav-main-link-name">PIN Logs</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-main-item">
+                    <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true"
+                        aria-expanded="false" href="#">
+                        <i class="nav-main-link-icon fa fa-user-tie"></i>
+                        <span class="nav-main-link-name">confirmations</span>
+                    </a>
+                    <ul class="nav-main-submenu">
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="/admission/confirmation">
+                                <span class="nav-main-link-name">confirmation a student</span>
                             </a>
                         </li>
                     </ul>

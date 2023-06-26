@@ -67,14 +67,6 @@
                                                 </label>
                                                 <input required type="text" class="form-control" name="batch_name" value="<?= $data['batch_name']?>">
                                             </div>
-
-                                            <div class="col-md">
-                                                <label class="form-label">
-                                                    Batch Code <span class="text-danger">*</span>
-                                                </label>
-                                                <input required type="text" class="form-control" name="batch_code" value="<?= $data['batch_code']?>">
-                                            </div>
-
                                         </div>
 
                                     </div>
