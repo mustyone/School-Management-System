@@ -104,7 +104,6 @@ switch ($route){
             LEFT JOIN classes ON admission_application_form.class_id = classes.class_id LEFT JOIN admission_application_guardian ON admission_application_form.app_number = admission_application_guardian.app_number
             WHERE app_id ='$app_id'";
 
-            //dd($query);
             $result = mysqli_query($dbc,$query);
 
             $num_rows = mysqli_num_rows($result);
@@ -120,4 +119,24 @@ switch ($route){
             }
 
             break;
+            case "/admission/dashboard":
+                $CURRENT_PAGE = "application record";
+                $PAGE_TITLE = "applications record";
+
+                $query = "SELECT * FROM admission_batches WHERE status ='open'";
+                $result = mysqli_query($dbc,$query);
+
+                $num_rows = mysqli_num_rows($result);
+                if($num_rows ===1){
+                    $row = mysqli_fetch_assoc($result);
+                    $_SESSION['batch_name'] = $row['batch_name']; 
+                    $_SESSION['batch_id'] = $row['batch_id'];
+                }
+                $query = "SELECT * FROM admission_applications WHERE batch_id ='$row[batch_id]'";
+                $result = mysqli_query($dbc,$query);
+                $num_rows = mysqli_num_rows($result);
+
+                $_SESSION['number_of_applications'] = $num_rows;
+                break;
+    
 }

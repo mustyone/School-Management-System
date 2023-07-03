@@ -162,49 +162,6 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-main-heading">Settings</li>
-                <li class="nav-main-item">
-                    <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true"
-                        aria-expanded="false" href="#">
-                        <i class="nav-main-link-icon fa fa-database"></i>
-                        <span class="nav-main-link-name">Database</span>
-                    </a>
-                    <ul class="nav-main-submenu">
-                        <li class="nav-main-item">
-                            <a class="nav-main-link" href="/admission/filename">
-                                <span class="nav-main-link-name">New backup</span>
-                            </a>
-                        </li>
-                        <li class="nav-main-item">
-                            <a class="nav-main-link" href="/radmission/filename">
-                                <span class="nav-main-link-name">Backup records</span>
-                            </a>
-                        </li>
-                        <li class="nav-main-item">
-                            <a class="nav-main-link" href="/admission/filename">
-                                <span class="nav-main-link-name">Restore Backup</span>
-                            </a>
-                        </li>
-
-
-                    </ul>
-                </li>
-            
-                <li class="nav-main-item">
-                    <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true"
-                        aria-expanded="false" href="#">
-                        <i class="nav-main-link-icon fa fa-desktop"></i>
-                        <span class="nav-main-link-name">App Settings</span>
-                    </a>
-                    <ul class="nav-main-submenu">
-                        <li class="nav-main-item">
-                            <a class="nav-main-link" href="/result/admin/upgradeapp">
-                                <span class="nav-main-link-name">Upgrade App</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            
             </ul>
         </div>
         <!-- END Side Navigation -->
