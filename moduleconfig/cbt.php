@@ -26,12 +26,41 @@ switch ($route){
     case "/cbt/dashboard":
         $title = "CBT Module";
         break;
-    case "/cbt/examlist":
-        $CURRENT_PAGE = "exam list";
-        $PAGE_TITLE = "exam list";
 
-        $query = "SELECT * FROM cbt_exams";
+    case "/cbt/examlist":
+        $current_page = "exam";
+        $page_title = "Exam List";
+        $page_description = "Exam List";
+
+        $query = "SELECT * FROM cbt_exams LEFT JOIN classes ON cbt_exams.class_id = classes.class_id";
         $result = mysqli_query($dbc,$query);
+        $records = [];
+        while($rows = mysqli_fetch_assoc($result)){
+            $records[] = $rows;
+        }
+
+        
+
+        break;
+
+    case '/cbt/updateexam/':
+        $current_page = "exam";
+        $page_title = "Update Exam";
+        $page_description = "Update Exam";
+
+        $query = "SELECT * FROM cbt_exams WHERE id = '$id'";
+        $result = mysqli_query($dbc,$query);
+
+        $update = mysqli_fetch_assoc($result);
+
+        $sectionSubjects = getSectionSubjects();
+
+        $query = "SELECT * FROM classes";
+        $result = mysqli_query($dbc,$query);
+        $records = [];
+        while($rows = mysqli_fetch_assoc($result)){
+            $records[] = $rows;
+        }
 
         break;
 

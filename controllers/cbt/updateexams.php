@@ -16,17 +16,15 @@ $mark_per_questions = array_values($mark_per_questions);
 $mark_per_questions = json_encode($mark_per_questions);
 $instruction = htmlspecialchars($instruction);
 
-$query = "INSERT INTO cbt_exams 
-(exam_name,status,question_ids,exam_subject_id,time_alloted_min,number_of_question_subject,allow_calculator,instruction,mark_per_question,overallscore,show_result_per_question,show_result_after_submit,requre_id,class_id)
-VALUES 
-('$exam_name','$status',null,'$subject_ids',$time_alloted_min,'$number_of_questions','$allow_calculator','$instruction','$mark_per_questions','$overallscore','$show_result_per_question','$show_result_after_submit','$requre_id','$class_id')";
+$query = "UPDATE cbt_exams SET 
+exam_name = '$exam_name', status ='$status', question_ids = null, exam_subject_id = '$subject_ids', time_alloted_min = $time_alloted_min, number_of_question_subject = '$number_of_questions', allow_calculator = '$allow_calculator', instruction = '$instruction', mark_per_question ='$mark_per_questions',overallscore ='$overallscore',show_result_per_question ='$show_result_per_question',show_result_after_submit='$show_result_after_submit',requre_id='$requre_id',class_id='$class_id' WHERE id ='$id'";
 $result = mysqli_query($dbc,$query);
 $affected = mysqli_affected_rows($dbc);
 if($affected ===1){
-    $_SESSION['message'] = "Exam Have Been Created";
-    header("location:/cbt/createexam");
+    $_SESSION['message'] = "Exam Have Been Updated";
+    header("location:/cbt/examlist");
 }
 else{
-    $_SESSSION['error'] = "Exam Have Not Been Created";
-    header("location:/cbt/createexam");
+    $_SESSSION['error'] = "Exam Have Not Been Updated";
+    header("location:/cbt/examlist");
 }
