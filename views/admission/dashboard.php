@@ -35,11 +35,11 @@
             <div class="mt-3 mt-md-0 ms-md-3 space-x-1">
               
               <div class="dropdown d-inline-block">
-                <button type="button" class="btn btn-sm btn-alt-secondary space-x-1" id="dropdown-analytics-overview" 
+                <!-- <button type="button" class="btn btn-sm btn-alt-secondary space-x-1" id="dropdown-analytics-overview" 
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span>Quick Actions</span>
                   <i class="fa fa-fw fa-angle-down"></i>
-                </button>
+                </button> -->
                 <div class="dropdown-menu dropdown-menu-end fs-sm" aria-labelledby="dropdown-analytics-overview">
                   <a class="dropdown-item fw-medium" href="javascript:void(0)">New Student</a>
                   <a class="dropdown-item fw-medium" href="javascript:void(0)">Register student for session</a>
@@ -64,7 +64,7 @@
               <div class="block block-rounded d-flex flex-column h-100 mb-0">
                 <div class="block-content block-content-full flex-grow-1 d-flex justify-content-between align-items-center">
                   <dl class="mb-0">
-                    <dt class="fs-3 fw-bold"><?= number_format($activeStudents); // the date of current admition batch will be here?></dt>
+                    <dt class="fs-3 fw-bold"><?= $_SESSION['batch_name'];?></dt>
                     <dd class="fs-sm fw-medium fs-sm fw-medium text-muted mb-0">Current Admission Batch</dd>
                   </dl>
                   <div class="item item-rounded-lg bg-body-light">
@@ -73,7 +73,7 @@
                 </div>
                 <div class="bg-body-light rounded-bottom">
                   <a class="block-content block-content-full block-content-sm fs-sm fw-medium d-flex align-items-center justify-content-between" 
-                  href="/result/admin/studentsrecord">
+                  href="/admission/viewbatches">
                     <span>View All Batches</span>
                     <i class="fa fa-arrow-alt-circle-right ms-1 opacity-25 fs-base"></i>
                   </a>
@@ -86,7 +86,7 @@
               <div class="block block-rounded d-flex flex-column h-100 mb-0">
                 <div class="block-content block-content-full flex-grow-1 d-flex justify-content-between align-items-center">
                   <dl class="mb-0">
-                    <dt class="fs-3 fw-bold"><?= number_format($activeTeachers); ?></dt>
+                    <dt class="fs-3 fw-bold"><?= $_SESSION['number_of_applications'];?></dt>
                     <dd class="fs-sm fw-medium fs-sm fw-medium text-muted mb-0">Applications For Current Batches</dd>
                   </dl>
                   <div class="item item-rounded-lg bg-body-light">
@@ -95,7 +95,7 @@
                 </div>
                 <div class="bg-body-light rounded-bottom">
                   <a class="block-content block-content-full block-content-sm fs-sm fw-medium d-flex align-items-center justify-content-between" 
-                  href="/result/admin/teacherrecords">
+                  href="/admission/viewapplications">
                     <span>View All Applications</span>
                     <i class="fa fa-arrow-alt-circle-right ms-1 opacity-25 fs-base"></i>
                   </a>

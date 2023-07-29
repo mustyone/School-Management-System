@@ -3,6 +3,7 @@
 <!-- jQuery (required for jQuery Validation plugin) -->
 <script src="<?= BASE_URL ?>/assets/js/lib/jquery.min.js"></script>
 
+
 <!-- Page JS Plugins -->
 <script src="<?= BASE_URL ?>/assets/js/plugins/jquery-validation/jquery.validate.min.js"></script>
 

@@ -17,12 +17,12 @@ if($num_rows === 1){
 
     $max_id = $maxIDRow['max_id'] + 1;
 
-    $date = date("Ymd");
-    $application_number = "{$batchRecord['batch_code']}/{$date}/{$max_id}";
-
-    //Insert the record into applications table
-    $query = "INSERT INTO admission_applications SET batch_id={$batchRecord['batch_id']}, app_number='$application_number'";
-    mysqli_query($dbc, $query);
+    //$date = date("Ymd"); this date is not chenging (showing error duplicate entry)
+    $time = time();
+    $application_number = "{$batchRecord['batch_code']}/{$time}/{$max_id}";
+   
+    $_SESSION['batch_id'] = $batchRecord['batch_id'];
+    $_SESSION['app_number'] = $application_number;
 
 
     $_SESSION['batch_record'] = $batchRecord;

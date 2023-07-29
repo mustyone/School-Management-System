@@ -73,7 +73,7 @@
                                                 </div>
                                             </div>                                    
                                         </div>
-                                        <button type="submit" class="btn btn-primary" name="save">Procees</button>
+                                        <button type="submit" class="btn btn-primary" name="save">Proceed</button>
                                     </div>
                                 </div>
                             </form>
@@ -226,7 +226,9 @@
                                                         Image <span class="text-danger">*</span>
 
                                                         <?php if(file_exists(APP_PATH . "/assets/uploads/modules/"  . old('passport_photograpy'))): ?>
+                                                        <?php if(old('passport_photograpy')):?>
                                                          <a href="#" data-bs-toggle="modal" data-bs-target="#showimage">View Photograph</a>
+                                                         <?php endif;?>
                                                          <div class="modal" id="showimage" tabindex="-1" aria-labelledby="showimage" aria-hidden="true">
                                                             <div class="modal-dialog modal-sm" role="document">
                                                             <div class="modal-content">

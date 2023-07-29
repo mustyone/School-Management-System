@@ -17,7 +17,6 @@
 
             <!-- Page Content -->
             <div class="content">
-                <h3><?= $sample; ?></h3>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="block block-rounded">
@@ -95,34 +94,26 @@
                             <div class="block-content">
 
                                 <table class="table table-bordered">
-
                                     <tr>
                                         <thead>
                                             <td>#</td>
-                                            <td>Subject Code</td>
-                                            <td>Subject</td>
+                                            <td>Exams</td>
+                                            <td></td>
                                         </thead>
                                     </tr>
                                     <?php
-                                    $count = 0;
-                                    foreach ($exams as $exam) :
-
-
-                                    ?>
+                                    $count = 1;?>
                                         <tr>
                                             <tbody>
                                                 <tr>
-                                                    <td><?= $count++ ?></td>
-                                                    <td><?= $exam['subject_code'] ?></td>
-                                                    <td><?= $exam['subject_name'] ?></td>
+                                                    <td><?php echo $count++ ?></td>
+                                                    <td><?php echo $cbtexams['exam_name'] ?></td>
+                                                    <td class="text-center"><a href="/cbt/instructions">Take Exam</a></td>
                                                 </tr>
                                             </tbody>
                                         </tr>
-                                    <?php
 
-                                    endforeach;
 
-                                    ?>
                                 </table>
                             </div>
                         </div>

@@ -4,7 +4,6 @@ include(APP_PATH.'/config/db.php');
 
 extract($_POST);
 
-
 if(isset($_SESSION['applicationRecord'])){
     foreach($_POST as $key => $val){
         $_SESSION['applicationRecord']['applicationData'][$key] = $val;
@@ -13,7 +12,6 @@ if(isset($_SESSION['applicationRecord'])){
     $_SESSION['old'] = $_SESSION['applicationRecord']['applicationData'];
 
 }
-
 
 
 // for parent and guardiant
@@ -81,13 +79,18 @@ if(isset($pin)){
 
     $batch_id = $_SESSION['batch_record']['batch_id'];
 
-    $query = "SELECT * FROM admission_pins WHERE batch_id = $batch_id AND  pin ='$pin' AND status = 'not-used'";
+    $query = "SELECT * FROM admission_pins WHERE batch_id = '$_SESSION[batch_id]' AND  pin ='$pin' AND status = 'not-used'";
+    //dd($query);
     $result = mysqli_query($dbc,$query);
 
 
     $numrows = mysqli_num_rows($result);
 
     if($numrows === 1){
+        //insert admission application record
+        $query = "INSERT INTO admission_applications (app_number,batch_id) VALUES ('$app_number','$_SESSION[batch_id]')";
+        mysqli_query($dbc,$query);
+
         $record =mysqli_fetch_assoc($result);
 
         $query = "UPDATE admission_pins SET status='used' WHERE id ='$record[id]'";
@@ -114,6 +117,10 @@ $query = "INSERT INTO admission_application_form (app_number,class_id,first_name
 
 $numrows = mysqli_affected_rows($dbc);
 if($numrows === 1){
+    //insert admission application record
+    $query = "INSERT INTO admission_applications (app_number,batch_id) VALUES ('$app_number','$_SESSION[batch_id]')";
+    mysqli_query($dbc,$query);
+    //insert admission application guardian
     $query = "INSERT INTO admission_application_guardian (app_number,father_info,mother_info,guardian_info) VALUES ('$app_number','$fatherInfo','$motherInfo','$guardianInfo')";
     mysqli_query($dbc,$query);
 
