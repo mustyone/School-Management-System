@@ -88,12 +88,12 @@
                     </a>
                     <ul class="nav-main-submenu">
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="/result/admin/newteacher">
+                            <a class="nav-main-link" href="/cbt/picexams">
                                 <span class="nav-main-link-name">Add Question</span>
                             </a>
                         </li>
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="/result/admin/teachers">
+                            <a class="nav-main-link" href="/cbt/viewquestion">
                                 <span class="nav-main-link-name">View Question</span>
                             </a>
                         </li>
@@ -107,12 +107,12 @@
                     </a>
                     <ul class="nav-main-submenu">
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="/result/admin/newteacher">
+                            <a class="nav-main-link" href="/cbt/addpasrquestion">
                                 <span class="nav-main-link-name">Add Past Question</span>
                             </a>
                         </li>
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="/result/admin/teachers">
+                            <a class="nav-main-link" href="/cbt/viewpastquestion">
                                 <span class="nav-main-link-name">View Past Question</span>
                             </a>
                         </li>

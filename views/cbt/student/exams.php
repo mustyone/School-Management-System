@@ -82,39 +82,15 @@
                     <div class="col-md-8">
                         <div class="block block-rounded">
                             <div class="block-header block-header-default">
-                                <h3 class="block-title">
-                                    Available Exams
-                                </h3>
-                                <div class="block-options">
-                                    <button type="button" class="btn-block-option">
-                                        <i class="fa fa-list"></i>
-                                    </button>
-                                </div>
+                            <span class="block-title">
+                                <?php for($i = 1; $i <= $numbers_of_exam; $i++):?>
+                                    <button class="btn btn-success">exams1</button>
+                                <?php endfor;?>                                
+                                </span>     
                             </div>
+    
                             <div class="block-content">
-
-                                <table class="table table-bordered">
-                                    <tr>
-                                        <thead>
-                                            <td>#</td>
-                                            <td>Exams</td>
-                                            <td></td>
-                                        </thead>
-                                    </tr>
-                                    <?php
-                                    $count = 1;?>
-                                        <tr>
-                                            <tbody>
-                                                <tr>
-                                                    <td><?php echo $count++ ?></td>
-                                                    <td><?php echo $cbtexams['exam_name'] ?></td>
-                                                    <td class="text-center"><a href="/cbt/instructions">Take Exam</a></td>
-                                                </tr>
-                                            </tbody>
-                                        </tr>
-
-
-                                </table>
+                                <p>questions</p>
                             </div>
                         </div>
 
