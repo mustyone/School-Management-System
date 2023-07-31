@@ -68,22 +68,22 @@
                                                             Question <?= $i + 1; ?><span class="text-danger">*</span>
                                                         </label>
 
-                                                        <input type="text" class="form-control texteditor" placeholder="" name="">
+                                                        <input type="text" class="form-control texteditor" placeholder="" name="question<?= $i ?>">
                                                     </div>
 
                                                     <div class="mb-2 form-group d-flex gap-3">
 
                                                         <div>
-                                                            <input id='qtypeSC<?= $i; ?>' data-key="<?= $i; ?>" class="questionTypeRadio" value='sc' type="radio" name="qtype<?= $i; ?>">
+                                                            <input id='qtypeSC<?= $i; ?>' data-key="<?= $i; ?>" class="questionTypeRadio" value='sc' type="radio" name="optiontype<?= $i; ?>">
                                                             <label style="cursor:pointer" for="qtypeSC<?= $i; ?>">Single Choice</label>
                                                         </div>
                                                         <div>
-                                                            <input id='qtypeMC<?= $i; ?>' data-key="<?= $i; ?>" class="questionTypeRadio" value='mc' type="radio" name="qtype<?= $i; ?>">
+                                                            <input id='qtypeMC<?= $i; ?>' data-key="<?= $i; ?>" class="questionTypeRadio" value='mc' type="radio" name="optiontype<?= $i; ?>">
                                                             <label style="cursor:pointer" for="qtypeMC<?= $i; ?>">Multiple Choice</label>
 
                                                         </div>
                                                         <div>
-                                                            <input id='qtypeTF<?= $i; ?>' data-key="<?= $i; ?>" class="questionTypeRadio" value='tf' type="radio" name="qtype<?= $i; ?>">
+                                                            <input id='qtypeTF<?= $i; ?>' data-key="<?= $i; ?>" class="questionTypeRadio" value='tf' type="radio" name="optiontype<?= $i; ?>">
                                                             <label style="cursor:pointer" for="qtypeTF<?= $i; ?>">True/False</label>
                                                         </div>
 
@@ -93,16 +93,21 @@
                                                     <div class="optionformats optionformat<?= $i; ?> optionformatSC-<?= $i; ?>" >
                                                         <small>Pick the correct answer using the radios</small>
                                                         
-                                                        <button type="button" class="btn btn-outline-primary float-end newSCOption">
+                                                        <button type="button" data-option-wrapper-key='<?= $i; ?>' class="btn btn-outline-primary float-end newSCOption mb-1">
                                                             <i class="fa fa-plus"></i>
                                                         </button>
 
-                                                        <div class="form-group SCOptionsWrapper">
-                                                            <div class="input-group">
+                                                        <div class="form-group SCOptionsWrapper<?= $i; ?>">
+                                                            <div class="input-group mb-2">
                                                                 <span class="input-group-text">
-                                                                    <input style="cursor:pointer" type="radio" name="" id="">
+                                                                    <input style="cursor:pointer" type="radio" name="optionanswer<?= $i ?>" id="">
                                                                 </span>
-                                                                <input type="text" name="" class="form-control">
+                                                                <input type="text" name="options<?= $i ?>[]" class="form-control">
+                                                                <span class="input-group-text">
+                                                                    <button type="button" class='btn btn-sm text-danger deleteOption'>
+                                                                        <i class='fa fa-trash'></i>
+                                                                    </button>
+                                                                </span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -110,15 +115,20 @@
                                                      <!-- Multiple choice options-->
                                                     <div class="optionformats optionformat<?= $i; ?> optionformatMC-<?= $i; ?>">
                                                         <small>Pick the correct answers applicable </small>
-                                                        <button type="button" class="btn btn-outline-primary float-end newMCOption">
+                                                        <button type="button" data-option-wrapper-key='<?= $i; ?>' class="btn btn-outline-primary float-end newMCOption mb-1">
                                                             <i class="fa fa-plus"></i>
                                                         </button>
-                                                        <div class="form-group">
-                                                            <div class="input-group">
+                                                        <div class="form-group MCOptionsWrapper<?= $i; ?>">
+                                                            <div class="input-group mb-2">
                                                                 <span class="input-group-text">
-                                                                    <input style="cursor:pointer" type="checkbox" name="" id="">
+                                                                    <input style="cursor:pointer" type="checkbox" name="optionanswer<?= $i ?>[]" id="">
                                                                 </span>
-                                                                <input type="text" name="" class="form-control">
+                                                                <input type="text" name="options<?= $i ?>[]" class="form-control">
+                                                                <span class="input-group-text">
+                                                                    <button type="button" class='btn btn-sm text-danger deleteOption'>
+                                                                        <i class='fa fa-trash'></i>
+                                                                    </button>
+                                                                </span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -128,19 +138,19 @@
                                                         <small>Pick the correct answer using the radios </small>
                                                        
                                                         <div class="form-group">
-                                                            <div class="input-group">
+                                                            <div class="input-group mb-2">
                                                                 <span class="input-group-text">
-                                                                    <input style="cursor:pointer" type="radio" name="" id="">
+                                                                    <input style="cursor:pointer" type="radio" name="optionanswer<?= $i ?>" id="">
                                                                 </span>
-                                                                <input type="text" value="True" readonly class="form-control">
+                                                                <input type="text" name="options<?= $i ?>[]" value="True" readonly class="form-control">
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <div class="input-group">
+                                                            <div class="input-group mb-2">
                                                                 <span class="input-group-text">
-                                                                    <input style="cursor:pointer" type="radio" name="" id="">
+                                                                    <input style="cursor:pointer" type="radio" name="optionanswer<?= $i ?>" id="">
                                                                 </span>
-                                                                <input type="text" value="False" readonly class="form-control">
+                                                                <input type="text" name="options<?= $i ?>[]" value="False" readonly class="form-control">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -179,12 +189,13 @@
             $('.optionformats').hide();
 
             let radioVal = null;
+            let key = null;
 
             $('.questionTypeRadio').click(function(){
                 
                 radioVal = $(this).val();
                 
-                let key = $(this).attr('data-key');
+                key = $(this).attr('data-key');
 
                 $('.optionformat'+key).hide();
 
@@ -207,23 +218,50 @@
 
             });
 
-            // const button = document.querySelector('.newSCOption');
-
-            // button.addEventListener('click' , function(){
-            //     alert('You clicked me');
-            // });
-
             $('.newSCOption,.newMCOption').click(function(){
-               
+                let optionWrapperKey = $(this).attr('data-option-wrapper-key');
+                
                 if(radioVal === 'sc'){
-                    let SCOptionsWrapper = $('.SCOptionsWrapper');
+                    let SCOptionsWrapper = $('.SCOptionsWrapper'+optionWrapperKey);
+                    let option = `
+                    <div class="input-group mb-2">
+                        <span class="input-group-text">
+                            <input style="cursor:pointer" type="radio" name="optionanswer${optionWrapperKey}" id="">
+                        </span>
+                        <input type="text" name="options${optionWrapperKey}[]" class="form-control">
+                        <span class="input-group-text">
+                            <button type="button" class='btn btn-sm text-danger deleteOption'>
+                                <i class='fa fa-trash'></i>
+                            </button>
+                        </span>
+                    </div>
+                    `;
+                    SCOptionsWrapper.append(option);
 
-                    let parentDiv = $('<div>');
                 }
 
                 if(radioVal === 'mc'){
-                    //
+                    let MCOptionsWrapper = $('.MCOptionsWrapper'+optionWrapperKey);
+                    let option =  `
+                    <div class="input-group mb-2">
+                        <span class="input-group-text">
+                            <input style="cursor:pointer" type="checkbox" name="optionanswer${optionWrapperKey}[]" id="">
+                        </span>
+                        <input type="text" name="options${optionWrapperKey}[]" class="form-control">
+                        <span class="input-group-text">
+                            <button type="button" class='btn btn-sm text-danger deleteOption'>
+                                <i class='fa fa-trash'></i>
+                            </button>
+                        </span>
+                    </div>
+                    `;
+                    MCOptionsWrapper.append(option);
                 }
+            });
+
+            //Delete an option
+            $(document).on('click', '.deleteOption', function(){
+                $(this).parent().parent().remove();
             });
 
 
