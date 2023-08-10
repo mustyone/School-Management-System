@@ -93,7 +93,7 @@
                             </a>
                         </li>
                         <li class="nav-main-item">
-                            <a class="nav-main-link" href="/cbt/viewquestion">
+                            <a class="nav-main-link" href="/cbt/picexamquestionbank">
                                 <span class="nav-main-link-name">View Question</span>
                             </a>
                         </li>

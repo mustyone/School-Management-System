@@ -22,7 +22,7 @@ switch ($route){
         }
 
         $cbtquery = "SELECT * FROM cbt_exams WHERE status ='active'";
-        //dd($query);
+
         $cbtresult = mysqli_query($dbc,$cbtquery);
         $num_rows = mysqli_num_rows($cbtresult);
         if($num_rows ===1){
@@ -41,16 +41,24 @@ switch ($route){
         $instruction = htmlspecialchars_decode($_SESSION['cbt_exams']['instruction']);
 
         break;
-    case "/cbt/exams":
+    case "/cbt/exams":    
         $current_page = "Exam";
         $page_title = "Exams";
         $page_description = "Exams Page";
-        $exam_subject_id = json_decode($_SESSION['cbt_exams']['exam_subject_id']);
 
-        $numbers_of_exam = count($exam_subject_id);
-        //get the names of subject by using this array
-        //$exam_subject_id
+        $exam_subject_id = json_decode($_SESSION['cbt_exams']['exam_subject_id'], true);
 
+        $subject_ids = implode(',',$exam_subject_id);
+        
+        $query = "SELECT * FROM subjects WHERE subject_id IN($subject_ids) ";
+        $result = mysqli_query($dbc,$query);
+        $num_rows = mysqli_num_rows($result);
+        if($num_rows){
+            $subjects = []; 
+            while($record = mysqli_fetch_assoc($result)){
+                $subjects[] = $record;
+            }
+        }
         break;
     
     case "/cbt/examlist":
@@ -106,6 +114,8 @@ switch ($route){
         break;
 
     case '/cbt/picexams':
+    case "/cbt/picexamquestionbank":
+
         $current_page = "Question";
         $page_title = "Question";
         $page_description = "Add Question";
@@ -119,5 +129,25 @@ switch ($route){
             $exams[] = $rows;
         }
         break;
+
+        case '/cbt/viewquestionbank':
+            $current_page = "Question";
+            $page_title = "Question";
+            $page_description = "Add Question";
+
+
+            $subject_id = $_SESSION['SubjectRecord']['subject_id'];
+            $exam_id = $_SESSION['examrecord']['exam_id'];
+
+
+            $query = "SELECT * FROM cbt_question_bank WHERE exam_id = $exam_id AND subject_id = $subject_id";
+            dd($_SESSION['SubjectRecord'],$_SESSION['examrecord'],$query);
+            $result = mysqli_query($dbc,$query);
+            $questions = [];
+            while($rows = mysqli_fetch_assoc($result)){
+                $questions[] = $rows;
+            }            
+            break;
+
     
 }

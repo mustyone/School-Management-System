@@ -16,19 +16,22 @@ if ($num_rows === 1) {
     $query = "SELECT * FROM subjects WHERE subject_id IN($subject_id)";
     $result = mysqli_query($dbc, $query);
     $num_rows = mysqli_num_rows($result);
+
     if ($num_rows >= 1) {
 
         while ($rows = mysqli_fetch_assoc($result)) {
             $_SESSION['SubjectRecord'][] = $rows;
         }
         dd($_SESSION['SubjectRecord']);
-        header("location:/cbt/picsubjects");
+        header("location:/cbt/picsubjectquestionbank");
     } 
     else {
         $_SESSION['error'] = 'Pls try and pick the right exam';
-        header("location:/cbt/picexams");
+        header("location:/cbt/viewquestion");
     }
-} else {
+
+} 
+else {
     $_SESSION['error'] = 'Pls try and pick the right exam';
-    header("location:/cbt/picexams");
+    header("location:/cbt/viewquestion");
 }

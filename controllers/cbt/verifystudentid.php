@@ -4,7 +4,7 @@ include(APP_PATH.'/config/db.php');
 
 $student_id = $_POST['student_id'];
 
-$query = "SELECT * FROM students WHERE student_id = $student_id";
+$query = "SELECT * FROM students WHERE student_id = '$student_id'";
 $result = mysqli_query($dbc,$query);
 
 

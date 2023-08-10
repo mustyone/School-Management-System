@@ -61,7 +61,7 @@
                                 <div class="col-lg-12">
                                     <div class="mb-4">
                                         <div class="row">
-                                            <?php for ($i = 0; $i < $_SESSION['number_of_question_per_subject']; $i++) : ?>
+                                            <?php foreach($questions as $i => $question) : ?>
                                                 <div class="col-md-12 mb-3">
                                                     <div class="form-group mb-2">
                                                         <label class="form-label">
@@ -157,7 +157,7 @@
                                                     </div>
 
                                                 </div>
-                                            <?php endfor; ?>
+                                            <?php endforeach; ?>
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
