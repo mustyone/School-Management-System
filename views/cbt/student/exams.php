@@ -79,13 +79,14 @@
 
                     </div>
 
-                    <div class="col-md-8">
-                        <div class="block block-rounded">
+                    <div class="col-md-4">
+                        <div class="block block-rounded">    
                             <div class="block-header block-header-default">
                             <span class="block-title">
-                                <?php for($i = 1; $i <= $numbers_of_exam; $i++):?>
-                                    <button class="btn btn-success">exams1</button>
-                                <?php endfor;?>                                
+                                <?php foreach($subjects as $subject):?>
+
+                                        <button class="btn btn-success"><?= $subject['subject_name'] ?></button>
+                                <?php endforeach;?>
                                 </span>     
                             </div>
     
@@ -93,7 +94,38 @@
                                 <p>questions</p>
                             </div>
                         </div>
-
+                    </div>
+                    <div class="col-md-4">
+                        <div class="block block-rounded">
+                                <ul class="nav nav-tabs nav-tabs-block" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="btabs-animated-fade-home-tab" data-bs-toggle="tab" data-bs-target="#btabs-animated-fade-home" role="tab" aria-controls="btabs-animated-fade-home" aria-selected="true">Home</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="btabs-animated-fade-profile-tab" data-bs-toggle="tab" data-bs-target="#btabs-animated-fade-profile" role="tab" aria-controls="btabs-animated-fade-profile" aria-selected="false" tabindex="-1">Profile</button>
+                                    </li>
+                                    <li class="nav-item ms-auto" role="presentation">
+                                    <button class="nav-link" id="btabs-animated-fade-settings-tab" data-bs-toggle="tab" data-bs-target="#btabs-animated-fade-settings" role="tab" aria-controls="btabs-animated-fade-settings" aria-selected="false" tabindex="-1">
+                                        <i class="si si-settings"></i>
+                                    </button>
+                                    </li>
+                                </ul>
+                                <div class="block-content tab-content overflow-hidden">
+                                    <div class="tab-pane fade active show" id="btabs-animated-fade-home" role="tabpanel" aria-labelledby="btabs-animated-fade-home-tab" tabindex="0">
+                                    <h4 class="fw-normal">Home Content</h4>
+                                    <p>Content fades in..</p>
+                                    </div>
+                                    <div class="tab-pane fade" id="btabs-animated-fade-profile" role="tabpanel" aria-labelledby="btabs-animated-fade-profile-tab" tabindex="0">
+                                    <h4 class="fw-normal">Profile Content</h4>
+                                    <p>Content fades in..</p>
+                                    </div>
+                                    <div class="tab-pane fade" id="btabs-animated-fade-settings" role="tabpanel" aria-labelledby="btabs-animated-fade-settings-tab" tabindex="0">
+                                    <h4 class="fw-normal">Settings Content</h4>
+                                    <p>Content fades in..</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
                     </div>
                 </div>
 

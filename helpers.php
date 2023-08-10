@@ -19,9 +19,10 @@ function random_char(): string
  * Dump data ana exit
  *
  */
-function dd(array|string ...$data):string
+function dd(array|string|null ...$data):string
 {
     foreach ($data as $d) {
+        $d = is_null($d) ? 'null' : $d;
         echo "<pre>";
         print_r($d);
         echo "</pre>";
