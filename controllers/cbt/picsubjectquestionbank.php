@@ -22,7 +22,6 @@ if ($num_rows === 1) {
         while ($rows = mysqli_fetch_assoc($result)) {
             $_SESSION['SubjectRecord'][] = $rows;
         }
-        dd($_SESSION['SubjectRecord']);
         header("location:/cbt/picsubjectquestionbank");
     } 
     else {

@@ -9,8 +9,8 @@ get('/cbt/createexam','views/cbt/createexam');
 get('/cbt/examlist','views/cbt/examlist');
 get('/cbt/updateexam/$id','views/cbt/updateexam');
 get('/cbt/picexams','views/cbt/picexams');
-get('/cbt/picexamquestionbank','views/cbt/picexamquestionbank');
 
+get('/cbt/picexamquestionbank','views/cbt/picexamquestionbank');
 get('/cbt/picsubjectquestionbank','views/cbt/picsubjectquestionbank');
 
 get('/cbt/viewquestionbank','views/cbt/viewquestionbank');

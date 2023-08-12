@@ -136,17 +136,17 @@ switch ($route){
             $page_description = "Add Question";
 
 
-            $subject_id = $_SESSION['SubjectRecord']['subject_id'];
-            $exam_id = $_SESSION['examrecord']['exam_id'];
+            $subject_id = $_SESSION['active_subject_id'];
+            $exam_id = $_SESSION['examrecord']['id'];
 
 
             $query = "SELECT * FROM cbt_question_bank WHERE exam_id = $exam_id AND subject_id = $subject_id";
-            dd($_SESSION['SubjectRecord'],$_SESSION['examrecord'],$query);
             $result = mysqli_query($dbc,$query);
             $questions = [];
+            
             while($rows = mysqli_fetch_assoc($result)){
                 $questions[] = $rows;
-            }            
+            }                        
             break;
 
     

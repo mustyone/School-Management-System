@@ -68,9 +68,10 @@
                                                 <select class="form-control" name="subject_id" id="">
                                                     <option value="">Pic Sunject</option>
                                                     <?php foreach($_SESSION['SubjectRecord'] as $SubjectRecord):?>
-                                                        <option value="<?= $SubjectRecord['subject_id']?>"><?= $SubjectRecord['subject_name'];?></option>
+                                                        <option value="<?= $SubjectRecord['subject_id']?>">
+                                                        <?= $SubjectRecord['subject_name'];?>
+                                                        </option>
                                                     <?php endforeach;?>
-                                                    <?php unset($_SESSION['SubjectRecord']);?>
                                                 </select>
                                             </div>
                                             <div style="margin-top: 3%;" class="col-md-4">

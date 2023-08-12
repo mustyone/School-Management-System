@@ -16,6 +16,7 @@
                 <div class="content">
                     <div class="row justify-content-center push">
                         <div class="col-md-8 col-lg-6 col-xl-4">
+
                             <!-- Sign In Block -->
                             <div class="block block-rounded mb-0">
                                 <div class="block-header block-header-default">

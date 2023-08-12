@@ -17,8 +17,6 @@ $number_of_question_per_subject = $number_of_question_per_subject[$index];
 
 $_SESSION['number_of_question_per_subject'] = $number_of_question_per_subject;
 
-dd($_SESSION['SubjectRecord']);
-dd($_SESSION['SubjectRecord']);
 
 //subject but exam record id fine
 
