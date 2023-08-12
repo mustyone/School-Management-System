@@ -6,6 +6,7 @@ include(APP_PATH . '/config/db.php');
 $questionsCount = count($_POST['questions']);
 
 $queries = "";
+
 for($i = 0; $i < $questionsCount; $i++){
     
     $question = htmlspecialchars($_POST["question-{$i}"]);
@@ -37,8 +38,12 @@ for($i = 0; $i < $questionsCount; $i++){
     $queries .= "INSERT INTO cbt_question_bank (question_type,subject_id,question,question_metadata,answer,grading_type,class_id,exam_id,created_at) 
     VALUES ('$optiontype','$subject_id','$question','$options','$optionanswer','auto','$class_id','$exam_id','$created_at');";
 }
+
+
+
 $result = mysqli_multi_query($dbc,$queries);
 $affected_rows  = mysqli_affected_rows($dbc);
+
 if($affected_rows === $questionsCount){
     $_SESSION['message'] = "questions saved successfully";
     header("location:/cbt/questions");

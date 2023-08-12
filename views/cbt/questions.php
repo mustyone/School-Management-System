@@ -101,7 +101,7 @@
                                                         <div class="form-group SCOptionsWrapper<?= $i; ?>">
                                                             <div class="input-group mb-2">
                                                                 <span class="input-group-text">
-                                                                    <input style="cursor:pointer" type="radio" name="optionanswer-sc-<?= $i ?>" class="optionanswerradio">
+                                                                    <input style="cursor:pointer" type="radio" name="optionanswer-sc-<?= $i ?>[]" class="optionanswerradio">
                                                                 </span>
                                                                 <input type="text" name="options-sc-<?= $i ?>[]" class="form-control">
                                                                 <span class="input-group-text">
@@ -141,7 +141,7 @@
                                                         <div class="form-group">
                                                             <div class="input-group mb-2">
                                                                 <span class="input-group-text">
-                                                                    <input style="cursor:pointer" value="True" type="radio" name="optionanswer-tf-<?= $i ?>">
+                                                                    <input style="cursor:pointer" value="True" type="radio" name="optionanswer-tf-<?= $i ?>[]">
                                                                 </span>
                                                                 <input type="text" name="options-tf-<?= $i ?>[]" value="True" readonly class="form-control">
                                                             </div>
@@ -149,7 +149,7 @@
                                                         <div class="form-group">
                                                             <div class="input-group mb-2">
                                                                 <span class="input-group-text">
-                                                                    <input style="cursor:pointer" value="False" type="radio" name="optionanswer-tf-<?= $i ?>" class="optionanswerradio">
+                                                                    <input style="cursor:pointer" value="False" type="radio" name="optionanswer-tf-<?= $i ?>[]" class="optionanswerradio">
                                                                 </span>
                                                                 <input type="text" name="options-tf-<?= $i ?>[]" value="False" readonly class="form-control">
                                                             </div>
